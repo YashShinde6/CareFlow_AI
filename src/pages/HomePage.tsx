@@ -33,15 +33,17 @@ export const HomePage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 text-white overflow-hidden"
+        className="relative text-white overflow-hidden"
       >
         {/* Spline 3D Background */}
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full scale-110">
           <Spline 
             scene="https://prod.spline.design/5DohHFBkmuKbl2pJ/scene.splinecode"
             className="w-full h-full object-cover"
+            style={{
+              pointerEvents: 'none'
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/60 to-transparent"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -62,14 +64,14 @@ export const HomePage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/login"
-                  className="inline-flex items-center px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-200 group shadow-lg hover:shadow-xl backdrop-blur-sm"
+                  className="inline-flex items-center px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-200 group shadow-lg hover:shadow-xl"
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-all duration-200 backdrop-blur-sm shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   Request Demo
                 </Link>
@@ -80,6 +82,16 @@ export const HomePage = () => {
             <div className="hidden lg:block"></div>
           </div>
         </div>
+        
+        {/* Hide Spline branding */}
+        <style jsx>{`
+          iframe {
+            pointer-events: none;
+          }
+          [class*="spline"] {
+            pointer-events: none;
+          }
+        `}</style>
       </motion.section>
 
       {/* Features Section */}
