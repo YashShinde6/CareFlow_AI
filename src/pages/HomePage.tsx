@@ -41,14 +41,10 @@ export const HomePage = () => {
             scene="https://prod.spline.design/5DohHFBkmuKbl2pJ/scene.splinecode"
             className="w-full h-full object-cover"
             style={{
-<<<<<<< HEAD
-              
-            }}
-          />
-=======
               pointerEvents: 'none'
             }}
           />
+              
           {/* Overlay to hide Spline branding (bottom right) */}
           <div
             className="absolute"
@@ -70,7 +66,7 @@ export const HomePage = () => {
     top: 175,          // adjust this value to cover the "R"
     width: 50,
     height: 50,
-    background: 'rgb(207, 207, 207)',
+    background: 'rgb(207,207,207)',
     borderRadius: '50%',
     zIndex: 20,
   }}
@@ -88,7 +84,6 @@ export const HomePage = () => {
   }}
 />
 
->>>>>>> eb72b82 (commit aftre modifications)
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -129,14 +124,7 @@ export const HomePage = () => {
         </div>
         
         {/* Hide Spline branding */}
-        <style jsx>{`
-          iframe {
-            pointer-events: none;
-          }
-          [class*="spline"] {
-            pointer-events: none;
-          }
-        `}</style>
+        
       </motion.section>
 
       {/* Features Section */}
