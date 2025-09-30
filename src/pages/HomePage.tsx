@@ -70,7 +70,7 @@ export const HomePage = () => {
     top: 175,          // adjust this value to cover the "R"
     width: 50,
     height: 50,
-    background: 'rgb(34,197,94)',
+    background: 'rgb(207, 207, 207)',
     borderRadius: '50%',
     zIndex: 20,
   }}
