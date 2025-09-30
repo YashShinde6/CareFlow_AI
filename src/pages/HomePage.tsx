@@ -41,9 +41,54 @@ export const HomePage = () => {
             scene="https://prod.spline.design/5DohHFBkmuKbl2pJ/scene.splinecode"
             className="w-full h-full object-cover"
             style={{
+<<<<<<< HEAD
               
             }}
           />
+=======
+              pointerEvents: 'none'
+            }}
+          />
+          {/* Overlay to hide Spline branding (bottom right) */}
+          <div
+            className="absolute"
+            style={{
+              right: 12,
+              bottom: 12,
+              width: 120,
+              height: 40,
+              background: 'rgba(30,41,59,0.85)', // Tailwind slate-800/85
+              borderRadius: '12px',
+              zIndex: 20,
+            }}
+          />
+          {/* Overlay to hide the "R" button (bottom right corner) */}
+          <div
+  className="absolute"
+  style={{
+    left: 200,          // 👈 move from the left side
+    top: 175,          // adjust this value to cover the "R"
+    width: 50,
+    height: 50,
+    background: 'rgb(34,197,94)',
+    borderRadius: '50%',
+    zIndex: 20,
+  }}
+/>
+<div
+  className="absolute"
+  style={{
+    left:1500,          // 👈 move from the left side
+    top: 780,          // adjust this value to cover the "R"
+    width: 150,
+    height: 50,
+    background: 'rgb(207, 207, 207)',
+    borderRadius: '50%',
+    zIndex: 20,
+  }}
+/>
+
+>>>>>>> eb72b82 (commit aftre modifications)
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -56,7 +101,7 @@ export const HomePage = () => {
             >
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
                 Careflow-AI
-                <span className="block text-teal-300">Smart Hospital Management</span>
+                <span className="block text-black">Discharge Automation</span>
               </h1>
               <p className="text-xl text-white/90 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg">
                 AI-powered discharge, billing, and patient care solutions that transform healthcare operations and improve patient outcomes.
