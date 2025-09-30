@@ -46,3 +46,26 @@ Tech Stack
  
 ●	Monitoring: Prometheus + Grafana dashboards 
 
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js >= 18.x
+- npm >= 9.x (or yarn)
+- Git
+
+## Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/YashShinde6/CareFlow_AI.git
+cd CareFlow_AI
+
+##Install Dependencies
+npm install
+npm install -D autoprefixer postcss tailwindcss@3
+npx i @splinetool/runtime
+npx i @splinetool/react-spline
+
+
