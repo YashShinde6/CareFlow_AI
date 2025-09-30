@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Users, BarChart, Shield } from 'lucide-react';
+import Spline from '@splinetool/react-spline';
 
 export const HomePage = () => {
   const features = [
@@ -32,57 +33,51 @@ export const HomePage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 text-white"
+        className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 text-white overflow-hidden"
       >
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Spline 3D Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <Spline 
+            scene="https://prod.spline.design/5DohHFBkmuKbl2pJ/scene.splinecode"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/60 to-transparent"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[600px]">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
+              className="z-20"
             >
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
                 Careflow-AI
                 <span className="block text-teal-300">Smart Hospital Management</span>
               </h1>
-              <p className="text-xl text-blue-100 mb-8">
+              <p className="text-xl text-white/90 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg">
                 AI-powered discharge, billing, and patient care solutions that transform healthcare operations and improve patient outcomes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/login"
-                  className="inline-flex items-center px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors duration-200 group"
+                  className="inline-flex items-center px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-200 group shadow-lg hover:shadow-xl backdrop-blur-sm"
                 >
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200"
+                  className="inline-flex items-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-all duration-200 backdrop-blur-sm shadow-lg hover:shadow-xl"
                 >
                   Request Demo
                 </Link>
               </div>
             </motion.div>
             
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="relative"
-            >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="h-64 bg-gradient-to-br from-teal-400 to-blue-500 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="h-16 w-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
-                      <Zap className="h-8 w-8 text-white" />
-                    </div>
-                    <p className="text-white font-semibold">AI-Powered Healthcare</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            {/* Right side - let Spline component show through */}
+            <div className="hidden lg:block"></div>
           </div>
         </div>
       </motion.section>
