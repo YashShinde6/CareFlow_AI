@@ -41,7 +41,7 @@ export const HomePage = () => {
             scene="https://prod.spline.design/5DohHFBkmuKbl2pJ/scene.splinecode"
             className="w-full h-full object-cover"
             style={{
-              pointerEvents: 'none'
+              
             }}
           />
         </div>
